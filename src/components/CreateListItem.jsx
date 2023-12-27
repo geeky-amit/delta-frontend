@@ -10,13 +10,14 @@ const CreateListItem = () => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     let counter = 0;
+
     useEffect(() => {
         axios.get('/api/todo').then((res) => {
             setTodos(res.data)
         }).catch((error) => {
             console.log(error);
         })
-    }, [todos])
+    }, [])
 
     const clickHandler = async () => {
         if (!(title || description)) {
@@ -25,6 +26,7 @@ const CreateListItem = () => {
         }
 
         try {
+
             await axios.post("/api/todo/createTodo", { title, description });
             alert('Item created successfully');
         } catch (error) {
