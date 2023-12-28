@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
-import Card from 'react-bootstrap/Card';
-//import ListItems from "../components/ListItems"
+import ListItems from "../components/ListItems"
 
 
 const CreateListItem = () => {
@@ -65,32 +64,9 @@ const CreateListItem = () => {
 
             <br />
 
-
             {
-                todos.map((todo) => (
-                    <div key={todo._id} style={{
-                        "display": "flex",
-                        "justifyContent": "center",
-                        "alignItem": "center"
-                    }}>
-
-                        <Card className='mb-4' style={{ width: '25rem', backgroundColor: "#b3d8e6" }}>
-                            <Card.Body>
-                                <Card.Title>{todo.title}</Card.Title>
-                                <Card.Text>
-                                    {todo.description}
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-
-
-                    </div>
-                ))
-            }
-
-            {/* {
                 todos.map((todo) => (<ListItems key={todo._id} title={todo.title} description={todo.description} />))
-            } */}
+            }
         </>
 
     )
